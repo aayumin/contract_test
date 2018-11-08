@@ -1,0 +1,75 @@
+<html>
+
+<head>
+  <title>Express</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+  <h1>Express</h1>
+<br>
+    <h3>Enter two integers</h3>
+       <br>
+       
+        
+        <div class="form-group">
+            <label for="inputInteger">two Input Integers</label>
+            <input type="text" class="form-control" id="inputInteger1">
+            <input type="text" class="form-control" id="inputInteger2">
+        </div>
+        <button onclick="submit()" class="btn btn-primary" id="submit-button"> execute</button>
+        <button onclick="getInfo()" class="btn btn-primary">Get sum of two</button> 
+        <br><br>
+        <div class="alert alert-info" role="alert" id="message">
+           <h3>  hello.  </h3>
+        </div>
+        <div>
+         <br><br>
+           <button onclick="test_getAddr()" id="getAddr-button"> get Addr[0] </button>
+           <br>
+        </div>
+	<br><br>
+    </div>
+
+        <script type="text/javascript" src="/javascripts/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+<script type="text/javascript" async="false"> 
+	var web3 = new Web3(new Web3.providers.HttpProvider("http://lynx.snu.ac.kr:8000"));
+
+
+var sum_outer;
+
+function submit()
+{
+	var a = document.getElementById("inputInteger1").value;
+	var b = document.getElementById("inputInteger2").value;
+	if((a == "")||(b == ""))
+	{
+		alert("Please enter two numbers");
+	}
+	else
+	{
+		var sum = a*1+b*1;
+		sum_outer = sum;
+		console.log('the sum is '+ sum);
+	}
+}
+
+function getInfo()
+{
+	alert('hello');
+	$('#message').html('<h2> result is '+ sum_outer +'</h2>');
+	//console.log(web3.eth.accounts[0]);
+}
+
+function test_getAddr()
+{
+
+}
+
+</script>	
+
+
+</body>
+
+</html>
